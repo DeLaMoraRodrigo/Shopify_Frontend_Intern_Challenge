@@ -1,0 +1,49 @@
+form,
+.movie-container,
+.nomination-container {
+  background-color: white;
+  border: 3px solid lightgrey;
+  border-radius: 15px;
+  padding: 0.75rem 1rem;
+}
+
+form {
+  width: 98%;
+}
+
+label,
+input {
+  display: block;
+}
+
+label {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+input {
+  width: 99%;
+  height: 3vh;
+  margin-top: 0.2rem;
+  font-size: 1rem;
+}
+
+.list-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.movie-container,
+.nomination-container {
+  width: 48%;
+  margin-top: 2.5vh;
+}
+
+.nomination-container {
+  margin-left: 2%;
+}
+
+.empty {
+  width: 98% !important;
+  margin: 2.5vh 0;
+}
