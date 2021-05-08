@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import './App.css';
 import { NominationsContext } from "./contexts/NominationsContext";
 import SearchBar from "./components/SearchBar";
 
 function App() {
-  const [nominationsList, setNominationsList] = useState([]);
+  const [nominationsList, setNominationsList] = useState(JSON.parse(localStorage.getItem("nominations")) || []);
 
   const addNomination = movie => {
     setNominationsList([
@@ -17,6 +17,10 @@ function App() {
   const deleteNomination = movie => {
     setNominationsList(nominationsList.filter(nomination => nomination.imdbID !== movie.imdbID))
   }
+
+  useEffect(() => {
+    localStorage.setItem("nominations", JSON.stringify(nominationsList))
+  }, [nominationsList])
 
   return (
     <div className="App">
