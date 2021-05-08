@@ -20,7 +20,7 @@ function SearchBar(props){
         e.preventDefault();
         setLatestSearch(search.title);
         let parsedSearch = search.title.split(" ").join("+");
-        axios.get(`http://www.omdbapi.com/?s=${parsedSearch}&apikey=${process.env.REACT_APP_API_KEY}`)
+        axios.get(`https://www.omdbapi.com/?s=${parsedSearch}&apikey=${process.env.REACT_APP_API_KEY}`)
             .then(res => {
                 if (res.data.Search) {
                     setMovieList([])
